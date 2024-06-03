@@ -3,8 +3,8 @@ import datetime
 
 app = Flask(__name__)
 
-TARGET_LAT = -34.6037  # Ejemplo: Latitud de Buenos Aires
-TARGET_LON = -58.3816  # Ejemplo: Longitud de Buenos Aires
+TARGET_LAT = -36.7232497  # Ejemplo: Latitud de Buenos Aires
+TARGET_LON = -56.6750185  # Ejemplo: Longitud de Buenos Aires
 RADIUS = 0.01  # Radio en grados, ajusta según necesites
 
 def is_within_target_location(lat, lon):
