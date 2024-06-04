@@ -23,4 +23,9 @@ for filename, url in models.items():
         f.write(response.content)
     print(f"Downloaded {filename}")
 
+
 print("All models downloaded successfully.")
+
+x = lambda a: a + 10
+
+print(x(5))

@@ -1,24 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Attendance Tracker</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-        <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
-        <script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition with OpenCV</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
 <body>
     <div class="container">
-        <h1>Attendance Tracker</h1>
-        <p id="location">Location will be shown here</p>
-        <button id="capture-btn">Capture Face</button>
-        <div class="camera">
-            <video id="video" width="720" height="560" autoplay muted></video>
-            <canvas id="overlay" width="720" height="560"></canvas>
-        </div>
-        <p id="message"></p>
+        <h1>Face Recognition with OpenCV</h1>
+        <img src="{{ url_for('video_feed') }}" width="720" height="560">
     </div>
 </body>
 </html>
+
+
