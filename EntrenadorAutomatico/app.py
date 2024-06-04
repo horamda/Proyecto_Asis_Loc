@@ -46,7 +46,7 @@ def capture():
                 count += 1
                 if count >= 400:
                     break
-    return 'Captured 400 images'
+    return 'Capturadas 50 imagenes'
 
 if __name__ == '__main__':
     app.run(debug=True)
