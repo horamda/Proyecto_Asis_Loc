@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Imágenes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Captura de Imágenes</h1>
+        <img src="{{ url_for('video_feed') }}" width="720" height="560">
+        <form id="capture-form" action="/capture" method="post">
+            <input type="text" name="name" placeholder="Ingrese su nombre" required>
+            <button type="submit" name="angle" value="left">Captura Izquierda</button>
+            <button type="submit" name="angle" value="front">Captura Frente</button>
+            <button type="submit" name="angle" value="right">Captura Derecha</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        
+            
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

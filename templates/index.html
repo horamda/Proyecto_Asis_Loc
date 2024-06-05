@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Face Recognition with OpenCV</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Reconocimiento Facial con Open CV</h1>
+        <h1>Asistencia</h1>
+        <p id="datetime"></p>
+        <p id="location">Ubicación: <span id="lat"></span>, <span id="lon"></span></p>
+        <h2>Reconocimiento Facial con OpenCV</h2>
         <img src="{{ url_for('video_feed') }}" width="720" height="560">
     </div>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const datetimeElem = document.getElementById('datetime');
+            datetimeElem.textContent = `Fecha y Hora: ${now.toLocaleDateString()} ${now.toLocaleTimeString()}`;
+        }
+
+        function updateLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position => {
+                    const latElem = document.getElementById('lat');
+                    const lonElem = document.getElementById('lon');
+                    latElem.textContent = position.coords.latitude.toFixed(4);
+                    lonElem.textContent = position.coords.longitude.toFixed(4);
+                }, error => {
+                    document.getElementById('location').textContent = "Ubicación: No disponible";
+                });
+            } else {
+                document.getElementById('location').textContent = "Ubicación: No soportada por el navegador";
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+            setInterval(updateDateTime, 1000); // Actualiza cada segundo
+            updateLocation();
+        });
+    </script>
 </body>
 </html>
+
 
 
